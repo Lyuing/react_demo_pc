@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+div, p {
+  margin: 0;
+  padding: 0;
+}
+
+.input{
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  height: 20px;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #ccc;
+  transition: border 300ms;
+}
+.input:focus{
+  border-bottom: 1px solid salmon;
+}
+
+.button{
+  background-color: salmon;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+.button:active{
+  background-color: rgb(235, 104, 90);
+}
