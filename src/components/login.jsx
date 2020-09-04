@@ -2,7 +2,6 @@ import React from 'react';
 // import style from './login.module.css';
 import './login.css';
 import api from '../sdk'
-import "./extends.less"
 
 class Login extends React.Component {
   constructor(props) { 
@@ -19,6 +18,8 @@ class Login extends React.Component {
     let {name, password} = this.state
     api.login(name, password).then(res=>{
       console.log(res)
+      this.props.route.history.push('/view')
+      // 登录
     }).catch(err=>{
       console.log(err)
     })
@@ -27,6 +28,7 @@ class Login extends React.Component {
     let {upName, upPassword} = this.state
     api.signup(upName, upPassword).then(res=>{
       console.log(res)
+      // 注册
     }).catch(err=>{
       console.log(err)
     })

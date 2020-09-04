@@ -1,13 +1,10 @@
 import React from 'react';
-import './App.css';
-import Login from './components/login';
+import Router from './router';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Login></Login>
-      </header>
+    <div className="__app_bg">
+      <Router/>
     </div>
   );
 }

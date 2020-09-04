@@ -1,0 +1,7 @@
+.block{
+  flex: 1;
+  min-height: 100%;
+}
+.bread{
+  padding: 15px;
+}
