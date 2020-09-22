@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import style from './Auth.module.css';
-import Login from '../../components/login';
+import Login from '../../components/login/login';
 
 export default class Auth extends Component {
   render() {

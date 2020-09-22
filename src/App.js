@@ -1,10 +1,12 @@
 import React from 'react';
-import Router from './router';
+import routeList from './router';
+
+import RouterView from './router/RouterView'
 
 function App() {
   return (
     <div className="__app_bg">
-      <Router/>
+      <RouterView routes={routeList}/>
     </div>
   );
 }

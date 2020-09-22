@@ -1,23 +1,22 @@
 import React from 'react';
 // import style from './login.module.css';
 import './login.css';
-import api from '../sdk'
+import api from '../../sdk'
 
 class Login extends React.Component {
-  constructor(props) { 
-    super(props)
-    this.state = {
-      name: '',
-      password: '',
-      upName: '',
-      upPassword: '',
-      isSignIn: true,     // 登录窗口
-    }
+
+  state = {
+    name: '',
+    password: '',
+    upName: '',
+    upPassword: '',
+    isSignIn: true,     // 登录窗口
   }
   postLogin = ()=>{
     let {name, password} = this.state
     api.login(name, password).then(res=>{
       console.log(res)
+      console.log(this.props, this.props.route)
       this.props.route.history.push('/view')
       // 登录
     }).catch(err=>{
