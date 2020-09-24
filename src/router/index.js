@@ -1,5 +1,5 @@
 import Auth from '../view/auth/Auth'
-import View from '../view/View'
+import View from '../view'
 
 const routeList = [
   {
@@ -10,6 +10,7 @@ const routeList = [
   {
     path: '/view',
     component: View,
+    children: [],
   },
 ]
 
