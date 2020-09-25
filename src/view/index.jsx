@@ -12,7 +12,7 @@ export class View extends Component {
         <Head></Head>
         <div className={style.layout}>
           <Menu/>
-          <Block routes={this.props.routes}/>
+          <Block/>
         </div>
       </div>
     )

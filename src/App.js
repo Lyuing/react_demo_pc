@@ -1,5 +1,6 @@
 import React from 'react';
 import routeList from './router';
+import { withRouter} from 'react-router-dom'
 
 import RouterView from './router/RouterView'
 
@@ -11,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
