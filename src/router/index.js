@@ -10,6 +10,11 @@ const viewRouteList = [
     exact: true,
   },
   {
+    path: '/view',
+    redirect: '/view/info',
+    exact: true,
+  },
+  {
     path: '/view/product',
     component: Product,
     exact: true,

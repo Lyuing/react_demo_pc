@@ -15,8 +15,8 @@ class Login extends React.Component {
   postLogin = ()=>{
     let {name, password} = this.state
     api.login(name, password).then(res=>{
-      console.log(res)
-      console.log(this.props, this.props.route)
+      // console.log(res)
+      // console.log(this.props, this.props.route)
       this.props.route.history.push('/view')
       // 登录
     }).catch(err=>{

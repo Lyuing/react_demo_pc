@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 import {Switch, Route, Redirect} from 'react-router-dom'
 
+import NotFound from '../view/notFound'
+
 class RouterView extends Component {
   render () {
     let routes = this.props.routes || [];
@@ -9,13 +11,14 @@ class RouterView extends Component {
       <Switch>
         {
           routes.map((item, index)=> {
-            console.log('item', item)
-            return !item.redirect ? 
+            // console.log('item', item)
+            if (!item.path) return <Route component={NotFound} />
+            return item.redirect ? 
+              <Redirect from={item.path} to={item.redirect} key={index}/> :
               <Route path={item.path} key={index} exact={item.exact} render={ 
                 props => <item.component {...props} routes={item.children} />
-              } /> :
-              <Redirect from={item.path} to={item.redirect} key={index}/>
-          })
+              } />
+          }).concat([<Route key={999} component={NotFound} />])
         }
       </Switch>
     )

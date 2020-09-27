@@ -8,10 +8,12 @@ class API {
     return axios.get(url, {
       params
     }).then(res=>{
-      if(res.status === 200){
+      if(res.status === 200 && res.data.code === 10){
         return res.data
       }else{
-        throw new Error()
+        console.error(res)
+        return Promise.reject(res)
+        // throw new Error(JSON.parse(res), res.data)
       }
     })
   }
