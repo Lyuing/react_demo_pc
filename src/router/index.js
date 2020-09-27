@@ -2,6 +2,7 @@ import Auth from '../view/auth/Auth'
 import View from '../view'
 import Info from '../view/info'
 import Product from '../view/product'
+import Authority from '../view/authority'
 
 const viewRouteList = [
   {
@@ -10,13 +11,18 @@ const viewRouteList = [
     exact: true,
   },
   {
-    path: '/view',
-    redirect: '/view/info',
+    path: '/view/product',
+    component: Product,
     exact: true,
   },
   {
-    path: '/view/product',
-    component: Product,
+    path: '/view/authority',
+    component: Authority,
+    exact: true,
+  },
+  {
+    path: '/view',
+    redirect: '/view/info',
     exact: true,
   },
 ]

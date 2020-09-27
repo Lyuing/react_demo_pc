@@ -7,18 +7,20 @@ class RouterView extends Component {
   render () {
     let routes = this.props.routes || [];
     console.log('routes', routes)
+
+    let routesList = routes.filter(i=>!i.redirect)
+    let redirectRoutesList = routes.filter(i=>i.redirect).map((item, index)=> {
+      return <Redirect from={item.path} to={item.redirect} exact={item.exact} strict={item.strict} key={index}/>
+    } )
     return (
       <Switch>
         {
-          routes.map((item, index)=> {
+          routesList.map((item, index)=> {
             // console.log('item', item)
-            if (!item.path) return <Route component={NotFound} />
-            return item.redirect ? 
-              <Redirect from={item.path} to={item.redirect} key={index}/> :
-              <Route path={item.path} key={index} exact={item.exact} render={ 
+            return <Route path={item.path} key={index} exact={item.exact} strict={item.strict} render={ 
                 props => <item.component {...props} routes={item.children} />
               } />
-          }).concat([<Route key={999} component={NotFound} />])
+          }).concat(redirectRoutesList).concat([<Route key={999} component={NotFound} />])
         }
       </Switch>
     )
