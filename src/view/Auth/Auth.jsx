@@ -7,7 +7,7 @@ export default class Auth extends Component {
     // console.log(this.props);
     return (
       <header className={style.wrap}>
-        <Login route={this.props}></Login>
+        <Login route={this.props}>登 录</Login>
       </header>
     )
   }

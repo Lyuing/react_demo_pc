@@ -1,0 +1,7 @@
+
+.item{
+  display: inline-block;
+  line-height: 32px;
+  text-align: center;
+  padding: 10px;
+}

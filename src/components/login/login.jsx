@@ -70,7 +70,7 @@ class Login extends React.Component {
     let {name, password, upName, upPassword} = this.state
     let SignIn = (
       <div className={`inner ${ this.state.isSignIn ?'': 'x-lt'}`}>
-        <p className="login-title">登录</p>
+        <p className="login-title">{this.props.children || '登录'}</p>
         {/* <p className={style['login-title']}>登录</p> */}
         <div className="login-box">
           <label htmlFor="name" className="login-item">
