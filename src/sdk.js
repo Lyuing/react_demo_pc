@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://www.lyxweb.top';
+axios.defaults.baseURL = 'http://121.196.18.198';
 axios.defaults.headers['Content-Type'] = 'application/json; charset=utf-8';
 
 class API {
